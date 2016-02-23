@@ -9,6 +9,16 @@ class MoviesController < ApplicationController
     @movie = Movie.find(id) # look up movie by unique ID
     # will render app/views/movies/show.<extension> by default
   end
+  
+  def update_movie_1
+  end
+  
+  def update_movie_2
+  end
+  
+  def delete_name_rating
+    Movie.where(:rating => 'G').destroy_all
+  end
 
   def index
     if params[:sort_by_title]

@@ -1,0 +1,12 @@
+-# update_movie_2.html.haml using partial
+
+%h1 Update Existing Movie
+
+= form_tag @movies, :method => :get do
+
+  = label :movie, :title, "Search for:"
+  = text_field :movie, 'title'
+  
+  = link_to "Search", movies_update_movie_1_path
+
+%th= link_to 'Back to movie list', movies_path
