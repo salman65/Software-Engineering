@@ -4,9 +4,9 @@
 %table#movies
   %thead
     %tr
-      %th{:class => @ins}= link_to 'Movie Title',movies_path(:sort_by_title => 'title'), :id => "title_header", :class => @ins
+      %th{:class => @ins}= link_to 'Movie Title',movies_path(:sort_by_title => 'title'), :id => "title_header", :class => @ins1
       %th Rating
-      %th{:class => @ins}= link_to 'Release Date',movies_path(:sort_by_date => 'release_date'), :id => "release_date_header", :class => @ins
+      %th{:class => @ins}= link_to 'Release Date',movies_path(:sort_by_date => 'release_date'), :id => "release_date_header", :class => @ins2
       %th More Info
   %tbody
     - @movies.each do |movie|
@@ -19,3 +19,10 @@
 =link_to 'Add new movie', new_movie_path
 =link_to 'update movie', update_movie_1_movies_path
 =link_to 'delete by name or rating', delete_name_rating_1_movies_path
+
+=form_tag movies_path, :method => :get do
+  Include:
+  - @all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]",'yes',true
+  = submit_tag 'Refresh'

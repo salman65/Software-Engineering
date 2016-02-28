@@ -1,5 +1,4 @@
   class MoviesController < ApplicationController
-  
     def movie_params
       params.require(:movie).permit(:title, :rating, :description, :release_date) 
     end
@@ -10,15 +9,23 @@
       # will render app/views/movies/show.<extension> by default
     end
     
+    
     def index
-      if params[:sort_by_title]
-        @movies = Movie.order(params[:sort_by_title])
-        @ins = "hilite"
-      elsif params[:sort_by_date]
-        @movies = Movie.order(params[:sort_by_date])
-        @ins = "hilite"
+      @start = false
+      @all_ratings = Movie.abc
+      if params[:ratings]!=nil
+        @f = params[:ratings].keys
       else
-        @movies = Movie.all
+        @f = @all_ratings
+      end
+      if params[:sort_by_title]
+        @movies = Movie.where(rating: @f).order(params[:sort_by_title])
+        @ins1 = "hilite"
+      elsif params[:sort_by_date]
+        @movies = Movie.where(rating: @f).order(params[:sort_by_date])
+        @ins2 = "hilite"
+      else
+        @movies = Movie.where(rating: @f).all
         @ins = ""
       end
     end
