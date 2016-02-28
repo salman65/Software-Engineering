@@ -4,20 +4,23 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'movies#index'
-  get 'movies/update_movie_1'
-  get 'movies/update_movie_2'
-  get 'movies/delete_name_rating'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
-  resources :movies
-  
+  resources :movies do
+    collection do
+      get 'update_movie_1'
+      put 'update_movie_2'
+      get 'delete_name_rating_1'
+      delete 'delete_name_rating_2'
+    end
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
