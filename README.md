@@ -1,0 +1,5 @@
+#LUMS Food Delivery Service
+
+Our clients are Azaan Azeem and Naeem Iftikhar. They are EE majors of 2017 batch in LUMS. In their three years of experience as hoselites one thing they have desperately felt the need for is the need for a centralized system where they can get information of what is available at PDC, Khokha, SuperStore, CHOPCHOP, Zakir Tikka, JamminJava and BombayChowpaty etc., and make a better decision on what to order at anytime.
+
+We are going to solve this issue by making an application which shows all the food outlets at LUMS on the main page. When a user selects an outlet all the food items of that outlet are displayed with their prices. User selects all the food items he likes to order and clicks on the button with the title "Deliver". On clicking, the page changes showing all the food items with total amount and time it would take to deliver. User then confrims the order and the application returs to its main page. Our application would also show which hotels and food items are currently in stock. Users can also rate the food items out of 5.
