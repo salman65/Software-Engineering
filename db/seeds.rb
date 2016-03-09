@@ -6,62 +6,42 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-restaurants = [{:name => 'Zakir', :number => '0123-1234567', :description => 'fast food, bbq', :rating => '3'},
+restaurants = ([{:name => 'Zakir', :number => '0123-1234567', :description => 'fast food, bbq', :rating => '3'},
     	  {:name => 'Flavours', :number => '0123-1234567', :description => 'pizza', :rating => '3.5'},
     	  {:name => 'Chop Chop', :number => '0123-1234567', :description => 'Chinese', :rating => '3'},
-      	  {:name => 'Khokha', :number => '0123-1234567', :description => 'fast food, crisp, biscuits', :rating => '4'},
-      	  ]
+      	  {:name => 'Khokha', :number => '0123-1234567', :description => 'fast food, crisp, biscuits', :rating => '4'}
+      	  ])
 
 restaurants.each do |rest|
   Restaurant.create!(rest)
 end
 
-zakir = [{:food_type => 'Zakir', :description => 'fast food, bbq', :price => '300'},
-    	  {:food_type => 'Zakir', :description => 'fast food, bbq', :price => '300'},
-    	  {:food_type => 'Zakir', :description => 'fast food, bbq', :price => '300'},
-      	  {:food_type => 'Zakir', :description => 'fast food, bbq', :price => '300'},
-      	  ]
+zakirs = ([{:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'},
+    	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'},
+    	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'},
+      	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'}
+      	  ])
 
-zakir.each do |rest|
+zakirs.each do |rest|
   Zakir.create!(rest)
 end
 
-restaurants = [{:name => 'Zakir', :number => '0123-1234567', :description => 'fast food, bbq', :rating => '3'},
-    	  {:name => 'Flavours', :number => '0123-1234567', :description => 'pizza', :rating => '3.5'},
-    	  {:name => 'Chop Chop', :number => '0123-1234567', :description => 'Chinese', :rating => '3'},
-      	  {:name => 'Khokha', :number => '0123-1234567', :description => 'fast food, crisp, biscuits', :rating => '4'},
-      	  ]
+flavours = ([{:food_item => 'flavours', :description => 'pizza', :price => '900'},
+    	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'},
+    	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'},
+      	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'}
+      	  ])
 
-restaurants.each do |rest|
-  Restaurant.create!(rest)
+flavours.each do |rest|
+  Flavour.create!(rest)
 end
 
-restaurants = [{:name => 'Zakir', :number => '0123-1234567', :description => 'fast food, bbq', :rating => '3'},
-    	  {:name => 'Flavours', :number => '0123-1234567', :description => 'pizza', :rating => '3.5'},
-    	  {:name => 'Chop Chop', :number => '0123-1234567', :description => 'Chinese', :rating => '3'},
-      	  {:name => 'Khokha', :number => '0123-1234567', :description => 'fast food, crisp, biscuits', :rating => '4'},
-      	  ]
+chopchops = ([{:food_item => 'chop chop', :description => 'chinese', :price => '200'},
+    	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'},
+    	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'},
+      	  {:food_item => 'Zakir', :description => 'fast food, bbq', :price => '300'}
+      	  ])
 
-restaurants.each do |rest|
-  Restaurant.create!(rest)
-end
-
-restaurants = [{:name => 'Zakir', :number => '0123-1234567', :description => 'fast food, bbq', :rating => '3'},
-    	  {:name => 'Flavours', :number => '0123-1234567', :description => 'pizza', :rating => '3.5'},
-    	  {:name => 'Chop Chop', :number => '0123-1234567', :description => 'Chinese', :rating => '3'},
-      	  {:name => 'Khokha', :number => '0123-1234567', :description => 'fast food, crisp, biscuits', :rating => '4'},
-      	  ]
-
-restaurants.each do |rest|
-  Restaurant.create!(rest)
-end
-
-restaurants = [{:name => 'Zakir', :number => '0123-1234567', :description => 'fast food, bbq', :rating => '3'},
-    	  {:name => 'Flavours', :number => '0123-1234567', :description => 'pizza', :rating => '3.5'},
-    	  {:name => 'Chop Chop', :number => '0123-1234567', :description => 'Chinese', :rating => '3'},
-      	  {:name => 'Khokha', :number => '0123-1234567', :description => 'fast food, crisp, biscuits', :rating => '4'},
-      	  ]
-
-restaurants.each do |rest|
-  Restaurant.create!(rest)
+chopchops.each do |rest|
+  Chopchop.create!(rest)
 end

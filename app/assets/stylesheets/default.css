@@ -33,18 +33,18 @@ h1.title {
   font-size: 2em;
   font-style: normal;
 }
-table#restaurants {
+table#restaurants, table#zakirs, table#chopchops, table#flavours{
   margin: 10px;
   border-collapse: collapse;
   width: 100%;
   border-bottom: 2px solid black;
 }
-table#restaurants th {
+table#restaurants th, table#zakirs th, table#chopchops th, table#flavours th {
   border: 2px solid white;
   font-weight: bold;
   background-color: wheat;
 }
-table#restaurants th, table#restaurants td {
+table#restaurants th, table#zakirs th, table#chopchops th, table#flavours th, table#restaurants td, table#zakirs td, table#chopchops td, table#flavours td {
   padding: 4px;
   text-align: left;
 }

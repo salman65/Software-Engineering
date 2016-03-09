@@ -1,0 +1,19 @@
+-#  This file is app/views/zakirs/index.html.haml
+%h1 Zakir
+
+%table#zakirs
+  %thead
+    %tr
+      %th{:class => @ins}= link_to 'Item',zakirs_path(:sort_by_food => 'food_item'), :id => "food_header", :class => @ins1
+      %th Description
+      %th{:class => @ins}= link_to 'Price',zakirs_path(:sort_by_price => 'price'), :id => "price_header", :class => @ins2
+  %tbody
+    - @zakir.each do |rest|
+      %tr
+        %td= link_to "#{rest.food_item}", zakirs_path(rest)
+        %td= rest.description
+        %td= rest.price
+        
+
+= link_to('Back', restaurants_path)
+

@@ -4,11 +4,15 @@
     end
   
     def show
-      id = params[:id] # retrieve movie ID from URI route
-      @restaurant = Restaurant.find(id) # look up movie by unique ID
-      # will render app/views/movies/show.<extension> by default
+      id = params[:id]
+      if id=="1" or id=='1'
+        redirect_to zakirs_path
+      elsif id=="2" or id=='2'
+        redirect_to flavours_path
+      elsif id=="3" or id=='3'
+        redirect_to chopchops_path
     end
-    
+  end
     
     def index
       if params[:sort_by_name]

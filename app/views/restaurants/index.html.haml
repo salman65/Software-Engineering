@@ -1,4 +1,4 @@
--#  This file is app/views/movies/index.html.haml
+-#  This file is app/views/resturants/index.html.haml
 %h1 All Restaurants
 
 %table#restaurants
@@ -16,3 +16,6 @@
         %td= rest.description
         %td= rest.rating 
         
+
+= link_to('Logout', destroy_user_session_path, :method => :delete)
+

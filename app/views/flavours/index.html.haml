@@ -1,0 +1,19 @@
+-#  This file is app/views/flavour/index.html.haml
+%h1 Flavours
+
+%table#flavours
+  %thead
+    %tr
+      %th{:class => @ins}= link_to 'Item',flavours_path(:sort_by_food => 'food_item'), :id => "food_header", :class => @ins1
+      %th Description
+      %th{:class => @ins}= link_to 'Price',flavours_path(:sort_by_price => 'price'), :id => "price_header", :class => @ins2
+  %tbody
+    - @flavour.each do |rest|
+      %tr
+        %td= link_to "#{rest.food_item}", flavours_path(rest)
+        %td= rest.description
+        %td= rest.price
+        
+
+= link_to('Back', restaurants_path)
+
