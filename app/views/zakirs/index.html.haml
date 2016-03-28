@@ -10,10 +10,9 @@
   %tbody
     - @zakir.each do |rest|
       %tr
-        %td= link_to "#{rest.food_item}", zakirs_path(rest)
+        %td= rest.food_item
         %td= rest.description
         %td= rest.price
         
 
 = link_to('Back', restaurants_path)
-
