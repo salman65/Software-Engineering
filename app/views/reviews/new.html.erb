@@ -1,0 +1,29 @@
+<div>
+  <h1> Please fill in the review form after delivery</h1>
+<div class="row">
+  <center>
+  <div class="col-md-6">
+  <div class="form-group">
+  <%= form_for (@review) do |f| %>
+    <%= f.label :ontime, id:"label1"%>
+      <%= f.text_field :ontime,class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :foodquality,id:"label1" %>
+          <%= f.text_field :foodquality,class: 'form-control'  %>
+      </div>
+    <div class="form-group">
+        <%= f.label :overallrating,id:"label1" %>
+        <%= f.text_field :overallrating,class: 'form-control'  %>
+        <%= f.hidden_field :user_id, :value => params[:id]%>
+    </div>
+      <div class="form-group">
+          <%= f.label :description,id:"label1" %>
+          <%= f.text_field :description,class: 'form-control'  %>
+      </div>
+            <div class="form-group">
+            <%= f.submit "Submit Review", class: "btn btn-edit" %>
+        </div>
+      <%end %>
+</div>
+</center>

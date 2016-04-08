@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ontime: 1
+  foodquality: 1
+  description: MyString
+  user_id: 1
+
+two:
+  ontime: 1
+  foodquality: 1
+  description: MyString
+  user_id: 1
