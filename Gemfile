@@ -6,13 +6,19 @@ gem 'rails', '4.1.8'
 gem 'minitest-reporters'
 gem 'mini_backtrace'
 
+group :test do
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
+
+gem 'simplecov'
 gem 'bootstrap-generators', '~> 3.3.4'
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-sass','3.2.0.0'
 gem 'byebug'
 gem 'devise'
 gem 'bcrypt'
-
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'rake','11.1.2'

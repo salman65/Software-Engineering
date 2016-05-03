@@ -1,2 +1,103 @@
-<h1>Flavours#index</h1>
-<p>Find me in app/views/flavours/index.html.erb</p>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pizza Flavours</td>
+            <td><%=form_for(@user.orders.build) do |f| %>
+<%= f.select(:items, options_for_select([["Tikka","Tikka"],["Fajitta","Fajitta"],["Euro","Euro"],["Vegi lovers","Vegi lovers"],["Chicken Supreme","Chicken Supreme"]]), :selected => params[:items]) %></td> 
+              <div><%= f.hidden_field :user_id, :value => params[:id] %></div>
+
+              <td><%= f.text_field :totalprice,:value => 'enter price here'%></td>
+              <td><%= f.submit "Add to Order", class: "btn btn-success" %></td>
+              <%end%>
+            </tr>
+          <tr>
+            <td>Pastas</td>
+            <td><%=form_for(@user.orders.build) do |f| %>
+<%= f.select(:items, options_for_select([["Lasagnia","Lasagnia"],["Pasta","Pasta"]]), :selected => params[:items]) %></td> 
+              <div><%= f.hidden_field :user_id, :value => params[:id] %></div>
+
+              <td><%= f.text_field :totalprice,:value => 'enter price here'%></td>
+              <td><%= f.submit "Add to Order", class: "btn btn-success" %></td>
+              <%end%>
+          </tr>
+          <tr>
+            <td>Drinks</td>
+            <td><%=form_for(@user.orders.build) do |f| %>
+<%= f.select(:items, options_for_select([["Pepsi","Pepsi"],["Sprite","Sprite"],["Marinda","Marinda"]]), :selected => params[:items]) %></td> 
+              <div><%= f.hidden_field :user_id, :value => params[:id] %></div>
+
+              <td><%= f.text_field :totalprice,:value => 'enter price here'%></td>
+              <td><%= f.submit "Add to Order", class: "btn btn-success" %></td>
+              <%end%>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+  <div class="col-md-4 col-md-push-1">
+    <h3>Order</h3>
+    <ul>
+      <%totalprice=0%>
+      <%if @user.orders%>
+        <%@user.orders.each do |eorder|%>
+        <% if eorder.items%>
+          <li><%=eorder.items%></li>
+          <%totalprice=totalprice+eorder.totalprice.to_i%>
+        <%end%>
+        <%end%>
+      <%end%>
+      <br>
+      <div>Total Bill: <%=totalprice%></div>
+      <br>
+      <%=link_to "Place Final Order" , {:controller=>:reviews ,:action=>:new , :id=>@user.id}%>
+    </ul>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Size</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pizza</td>
+            <td>small</td>
+            <td>300</td>
+          </tr>
+          <tr>
+            <td>Pizza</td>
+            <td>medium</td>
+            <td>550</td>
+          </tr>
+          <tr>
+            <td>Pizza</td>
+            <td>large</td>
+            <td>800</td>
+          </tr>
+          <tr>
+            <td>Drink</td>
+            <td>small</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>Drink</td>
+            <td>large</td>
+            <td>80</td>
+          </tr>

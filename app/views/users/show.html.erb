@@ -1,2 +1,13 @@
+<br>
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<br>
 <h1>We have following resturants</h1>
-<%=link_to "Zakir Tikka" ,{:controller=>:zakirs ,:action=>:index , :id=>@user.id}%>
+<br>
+<li><%=link_to "Zakir Tikka" ,{:controller=>:zakirs ,:action=>:index , :id=>@user.id}%></li>
+<li><%=link_to "Chop Chop" ,{:controller=>:chopchops ,:action=>:index , :id=>@user.id}%></li>
+<li><%=link_to "Flavours" ,{:controller=>:flavours ,:action=>:index , :id=>@user.id}%></li>
+<li><%=link_to "Subway" ,{:controller=>:subways ,:action=>:index , :id=>@user.id}%></li>
+<br><br>
+<li><%=link_to "View Reviews" ,{:controller=>:reviews ,:action=>:show , :id=>@user.id}%></li>

@@ -11,16 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404121900) do
+ActiveRecord::Schema.define(version: 20160809022258) do
+
+  create_table "chopchops", force: true do |t|
+    t.string   "food_item"
+    t.text     "description"
+    t.string   "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "flavours", force: true do |t|
+    t.string   "food_item"
+    t.text     "description"
+    t.string   "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"
-    t.string   "address",    limit: nil
-    t.string   "phone",      limit: nil
-    t.string   "items",      limit: nil
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "address"
+    t.string   "phone"
+    t.string   "items"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "totalprice"
+  end
+
+  create_table "restaurants", force: true do |t|
+    t.string   "name"
+    t.string   "number"
+    t.text     "description"
+    t.string   "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "reviews", force: true do |t|
@@ -34,13 +59,21 @@ ActiveRecord::Schema.define(version: 20160404121900) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name",            limit: nil
-    t.string   "email",           limit: nil
-    t.string   "password",        limit: nil
-    t.string   "cpassword",       limit: nil
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "cpassword"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "password_digest"
+  end
+
+  create_table "zakirs", force: true do |t|
+    t.string   "food_item"
+    t.text     "description"
+    t.string   "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

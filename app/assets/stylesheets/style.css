@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 html, body{
     font-size: 100%;
-	background:	#fff;
+	background:	white;
 	font-family: 'Open Sans', sans-serif;
 }
 @font-face {
@@ -51,7 +51,7 @@ body a:hover{
 	min-height:300px;
 }
 .navbar-brand{
-color:#803F5F;!important;
+color:#803F5F;
     font-size: 3.5em;
     text-decoration: none;
 	font-family: 'YesevaOne-Regular';
@@ -75,7 +75,7 @@ color:#803F5F;!important;
     color:  #803F5F;
 }
 .navbar-default .navbar-nav > li > a {
-       color:#803F5F;;
+       color:#803F5F;
    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
 }
@@ -148,7 +148,7 @@ ul li a.dribble:hover{
 .banner-info-left h1{
 	text-transform: capitalize;
     font-size: 2em;
-        color:#803F5F;;
+        color:#803F5F;
     margin: 0;
     line-height: 1.6em;
 }
@@ -555,7 +555,7 @@ p.proident{
 }
 .welcome-bottom-info h3{
 	    font-size: 3em;
-    color: #803F5F;;
+    color: #803F5F;
     margin: 0;
     line-height: 1.4em;
     text-transform: capitalize;

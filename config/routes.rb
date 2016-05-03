@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root :to => 'staticpages#home'
+  
   get 'subways/index'
 
   get 'subways/show'
@@ -21,12 +23,15 @@ Rails.application.routes.draw do
   get '/home' => 'staticpages#home'
   get '/aboutus' => 'staticpages#aboutus'
   get '/signin' => 'staticpages#signin'
+  get '/contact' => 'staticpages#contact'
+  # post '/sessions/new' => 'sessions#new'
 
   resources :zakirs
   resources :staticpages
   resources :users
   resources :orders
   resources :reviews
+  resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

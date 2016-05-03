@@ -13,23 +13,32 @@
           <tr>
             <td>BarBQ</td>
             <td><%=form_for(@user.orders.build) do |f| %>
-
-              <%= f.text_field :items,:value => 'Tikka'%></td>
+<%= f.select(:items, options_for_select([["Tikka piece","Tikka piece"],["tikka boti","tikka boti"],["malai boti","malai boti"],["seekh kabab","seekh kabab"],["green piece","green piece"]]), :selected => params[:items]) %></td> 
               <div><%= f.hidden_field :user_id, :value => params[:id] %></div>
 
-              <td><%= f.text_field :totalprice,:value => '240'%></td>
+              <td><%= f.text_field :totalprice,:value => 'enter price here'%></td>
               <td><%= f.submit "Add to Order", class: "btn btn-success" %></td>
               <%end%>
             </tr>
           <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
+            <td>Traditional</td>
+            <td><%=form_for(@user.orders.build) do |f| %>
+<%= f.select(:items, options_for_select([["Kabab Masala","Kabab Masala"],["Keema fry","Keema fry"],["tikka masala","tikka masala"],["achaari handi","achaari handi"],["white karahi","white karahi"]]), :selected => params[:items]) %></td> 
+              <div><%= f.hidden_field :user_id, :value => params[:id] %></div>
+
+              <td><%= f.text_field :totalprice,:value => 'enter price here'%></td>
+              <td><%= f.submit "Add to Order", class: "btn btn-success" %></td>
+              <%end%>
           </tr>
           <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
+            <td>Tandoor</td>
+            <td><%=form_for(@user.orders.build) do |f| %>
+<%= f.select(:items, options_for_select([["beef cheese paratha","beef cheese paratha"],["chicken cheese paratha","chicken cheese paratha"],["hara masala","hara masala"],["tawa masala","tawa masala"]]), :selected => params[:items]) %></td> 
+              <div><%= f.hidden_field :user_id, :value => params[:id] %></div>
+
+              <td><%= f.text_field :totalprice,:value => 'enter price here'%></td>
+              <td><%= f.submit "Add to Order", class: "btn btn-success" %></td>
+              <%end%>
           </tr>
         </tbody>
       </table>
@@ -41,15 +50,80 @@
       <%totalprice=0%>
       <%if @user.orders%>
         <%@user.orders.each do |eorder|%>
+        <% if eorder.items%>
           <li><%=eorder.items%></li>
           <%totalprice=totalprice+eorder.totalprice.to_i%>
         <%end%>
+        <%end%>
       <%end%>
-      <div>Total Bill :<%=totalprice%></div>
-      <%=link_to "Final Order" , {:controller=>:reviews ,:action=>:new , :id=>@user.id}%>
-      <li>
+      <br>
+      <div>Total Bill: <%=totalprice%></div>
+      <br>
+      <%=link_to "Place Final Order" , {:controller=>:reviews ,:action=>:new , :id=>@user.id}%>
     </ul>
-
   </div>
-
 </div>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tikka piece</td>
+            <td>180</td>
+          </tr>
+          <tr>
+            <td>tikka boti</td>
+            <td>220</td>
+          </tr>
+          <tr>
+            <td>malai boti</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>seekh kabab</td>
+            <td>180</td>
+          </tr>
+          <tr>
+            <td>green piece</td>
+            <td>210</td>
+          </tr>
+          <tr>
+            <td>Kabab Masala</td>
+            <td>220</td>
+          </tr>
+          <tr>
+            <td>Keema fry</td>
+            <td>220</td>
+          </tr>
+          <tr>
+            <td>achaari handi</td>
+            <td>230</td>
+          </tr>
+          <tr>
+            <td>white karahi</td>
+            <td>220</td>
+          </tr>
+          <tr>
+            <td>beef cheese paratha</td>
+            <td>180</td>
+          </tr>
+          <tr>
+            <td>chicken cheese paratha</td>
+            <td>180</td>
+          </tr>
+          <tr>
+            <td>hara masala</td>
+            <td>220</td>
+          </tr>
+          <tr>
+            <td>tawa masala</td>
+            <td>250</td>
+          </tr>

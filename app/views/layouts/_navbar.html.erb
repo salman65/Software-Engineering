@@ -9,18 +9,17 @@
       <span class="icon-bar"></span>
       </button>
       <div class="logo">
-        <a class="navbar-brand" href="index.html">Deliccio <span>Healthy And Tasty Food</span></a>
+        <a class="navbar-brand" href="/">FoodPanda at LUMS <span>Healthy And Tasty Food</span></a>
       </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
      <ul class="nav navbar-nav">
-      <li class="active"><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="typo.html">Typo</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><%= link_to "Home", home_path %></li>
+      <li><%= link_to "Sign In", new_session_path %></li>
+      <li><li><%= link_to "About Us", aboutus_path %></li>
+      <li><li><%= link_to "Contact Us", contact_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>

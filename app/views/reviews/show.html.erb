@@ -1,0 +1,19 @@
+<br>
+<h1>We have following reviews</h1>
+<br>
+<%@review.each do |x| %>
+<h3>review by <%=@user.name%></h3>
+    <br>
+    <h4>Food Quality</h4>
+    <li><%=x.foodquality%></li>
+    <br>
+    <h4>Ontime</h4>
+    <li><%=x.ontime%></li>
+    <br>
+    <h4>overallrating</h4>
+    <li><%=x.overallrating%></li>
+    <br>
+    <h4>Description</h4>
+    <li><%=x.description%></li>
+    <br><br>
+<%end%>
